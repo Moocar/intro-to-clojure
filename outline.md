@@ -72,7 +72,7 @@ public class Main {
 ```bash
 mvn package
 java -jar target/uberjar.jar
-```bash
+```
 
 ```clojure
 ;; src/com/walmartlabs/main.clj
