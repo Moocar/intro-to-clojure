@@ -8,21 +8,7 @@
   <artifactId>intro-to-clojure</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <!-- Required for clojure test depenencies -->
-  <repositories>
-    <repository>
-      <id>clojars.org</id>
-      <url>http://clojars.org/repo</url>
-    </repository>
-  </repositories>
-
   <dependencies>
-    <dependency>
-      <groupId>org.clojure</groupId>
-      <artifactId>clojure</artifactId>
-      <version>1.7.0-beta2</version>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
@@ -52,20 +38,6 @@
         <version>2.5</version>
         <configuration>
           <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-
-      <!-- Clojure plugin to allow testing in Clojure -->
-      <plugin>
-        <groupId>com.theoryinpractise</groupId>
-        <artifactId>clojure-maven-plugin</artifactId>
-        <version>1.3.23</version>
-        <extensions>true</extensions>
-        <configuration>
-          <runWithTests>true</runWithTests>
-          <sourceDirectories>
-            <sourceDirectory>src/main/clojure</sourceDirectory>
-          </sourceDirectories>
         </configuration>
       </plugin>
 
