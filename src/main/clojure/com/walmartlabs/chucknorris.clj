@@ -7,7 +7,7 @@
             [net.cgrand.enlive-html :as html]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Scrape
+;; Scrape!!
 
 (def board-url "http://corporate.walmart.com/our-story/leadership/board-of-directors/")
 
@@ -17,7 +17,7 @@
      (html/html-resource (java.net.URL. url)))))
 
 (defn first-and-last-name
-  "Takes a full name and returns a map of :first-name and :last-name"
+  "Takes a full name and returns [first-name last-name]"
   [string]
   (let [tokens (string/split string #"\s")]
     [(first tokens) (last tokens)]))
