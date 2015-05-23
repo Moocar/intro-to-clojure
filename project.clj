@@ -5,6 +5,8 @@
 
                  [http-kit "2.1.18"]
 
+                 [enlive "1.1.5"]
+
                  ;; Logging
                  [org.slf4j/log4j-over-slf4j "1.7.12"]
                  [org.slf4j/jcl-over-slf4j "1.7.12"]
