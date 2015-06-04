@@ -25,7 +25,20 @@ public class Main {
         s.getClass();
         BigInteger big = new BigInteger("123784598763498576239485762348956");
         double d = 22/7;
-        char c = 'a';
+    }
+
+    public void functions() {
+        "foo".getClass();
+        int i = 1 + 2;
+        Math.min(4, 5);
+    }
+
+    public static int foo(int a, int b) {
+        return 10 + a + b;
+    }
+
+    public void runFoo() {
+        foo(42, 142);
     }
 
     public void datastructures() {
@@ -43,34 +56,6 @@ public class Main {
         HashMap m = new HashMap();
         m.put("foo", 1);
         m.put("bar", 2);
-    }
-
-    public void functions() {
-        "foo".getClass();
-        int i = 1 + 2;
-        Math.min(4, 5);
-    }
-
-    public static int foo(int a, int b) {
-        return 10 + a + b;
-    }
-
-    public void runFoo() {
-        foo(42, 142);
-    }
-
-    public void interop() {
-        "foo".getClass();
-        Integer.valueOf("42");
-        new String("42");
-        "foo".indexOf("f");
-        int x = new Point(10, 20).x;
-        new Date().toString().endsWith("2010");
-
-        Map myMap = new HashMap();
-        myMap.put("foo", "bar");
-        myMap.put("biz", "baz");
-        myMap.put("who", "now");
     }
 
     public void runSomething() {

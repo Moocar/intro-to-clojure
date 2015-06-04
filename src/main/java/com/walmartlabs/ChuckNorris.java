@@ -34,6 +34,28 @@ public class ChuckNorris{
         }
         return getJokes(directors);
     }
+
+    public Elements findDirectorElements() throws IOException {
+        Document document = Jsoup.parse(new URL(BOARD_URL), 5000);
+        Elements links = document.select("h4.execName a");
+        return links;
+    }
+
+    private Director parseDirector(Element element) {
+        String content = element.html().trim();
+        String[] names = content.split("\\s");
+        return new Director(names[0], names[names.length - 1]);
+    }
+
+    private final class Director {
+        public final String firstName;
+        public final String lastName;
+        public Director(String firstName, String lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+    }
+
     /**
      * Makes `joke-count` requests to the ChuckNorris joke service in
      * parallel, and returns the jokes in order of length
@@ -124,27 +146,6 @@ public class ChuckNorris{
                 return -1;
             else
                 return 1;
-        }
-    }
-
-    public Elements findDirectorElements() throws IOException {
-        Document document = Jsoup.parse(new URL(BOARD_URL), 5000);
-        Elements links = document.select("h4.execName a");
-        return links;
-    }
-
-    private Director parseDirector(Element element) {
-        String content = element.html().trim();
-        String[] names = content.split("\\s");
-        return new Director(names[0], names[names.length - 1]);
-    }
-
-    private final class Director {
-        public final String firstName;
-        public final String lastName;
-        public Director(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
         }
     }
 }

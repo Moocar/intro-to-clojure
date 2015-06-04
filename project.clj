@@ -13,5 +13,6 @@
                  [org.slf4j/jul-to-slf4j "1.7.12"]
                  [org.slf4j/slf4j-api "1.7.12"]
                  [ch.qos.logback/logback-classic "1.0.13"]]
-  :main com.walmartlabs.main
+  :main ^:skip-aot main
+  :aot [main]
   :source-paths ["src/main/clojure"])

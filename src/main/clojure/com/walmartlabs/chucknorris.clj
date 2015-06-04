@@ -1,4 +1,7 @@
 (ns com.walmartlabs.chucknorris
+  "A more advanced program that scrapes the names of all the Walmart
+  board of directors and uses them as input to the chuck norris joke
+  service"
   (:require [clojure.core.async :as async :refer [>!! <!!]]
             [clojure.data.json :as json]
             [clojure.string :as string]
@@ -9,7 +12,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Scrape!!
 
-(def board-url "http://corporate.walmart.com/our-story/leadership/board-of-directors/")
+(def board-url
+  "http://corporate.walmart.com/our-story/leadership/board-of-directors/")
 
 (def fetch-url
   (memoize
@@ -40,7 +44,6 @@
 ;; Chuck Norris joke service
 
 (def chuck-norris-url "http://api.icndb.com/jokes/random")
-;; http://api.icndb.com/jokes/random?firstName=Rich&lastName=Hickey&limitTo=[nerdy]&escape=javascript
 
 (defn parse-joke
   "Takes a raw http response and extracts the joke out of it"
